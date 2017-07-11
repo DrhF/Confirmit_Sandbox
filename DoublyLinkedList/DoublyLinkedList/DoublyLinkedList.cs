@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Runtime.InteropServices;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Doubly_linked_list
+namespace DoublyLinkedList
 {
     public class DoublyLinkedList<T> : ICollection<T>
     {
@@ -22,10 +23,36 @@ namespace Doubly_linked_list
             }
         }
 
+        
+
         private DoublyLinkedListNode First { set; get; }
         private DoublyLinkedListNode Last { set; get; }
         public int Count { get; private set; }
         public bool IsReadOnly { get; private set; }
+
+        public DoublyLinkedList(params T[] arr)
+        {
+            DoublyLinkedListNode curr = new DoublyLinkedListNode(default(T));
+            foreach (var elem in arr)
+            {
+                DoublyLinkedListNode node = new DoublyLinkedListNode(elem);
+                if (Count == 0)
+                {
+
+                    curr = node;
+                    First = curr;
+                }
+                else
+                {
+                    curr.Next = node;
+                    node.Prev = curr;
+                    curr = node;
+                }
+
+                Last = curr;
+                Count++;
+            }
+        }
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -58,7 +85,7 @@ namespace Doubly_linked_list
                 Last = node;
             }
 
-            
+
             Count++;
         }
 
@@ -69,7 +96,7 @@ namespace Doubly_linked_list
 
         public void AddFirst(T item)
         {
-            DoublyLinkedListNode node = new DoublyLinkedListNode(item) {Next = First};
+            DoublyLinkedListNode node = new DoublyLinkedListNode(item) { Next = First };
             if (Count == 0)
                 Last = node;
             First = node;
@@ -80,11 +107,13 @@ namespace Doubly_linked_list
         {
             Count = 0;
             DoublyLinkedListNode curr = First;
-            while (curr != null)
+
+            while (curr.Next != null)
             {
                 curr = curr.Next;
                 curr.Prev = null;
             }
+            curr = null;
             First = Last = null;
         }
 
@@ -102,7 +131,16 @@ namespace Doubly_linked_list
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            if (arrayIndex + Count > array.Length)
+                throw new ArgumentOutOfRangeException(nameof(arrayIndex),
+                    "arrayIndex should not exceed length of array, list should fit the array");
+
+            DoublyLinkedListNode curr = First;
+            while (curr != null)
+            {
+                array[arrayIndex++] = curr.Value;
+                curr = curr.Next;
+            }
         }
 
         public bool Remove(T item)
@@ -166,17 +204,10 @@ namespace Doubly_linked_list
                     break;
                 default:
                     Last = Last.Prev;
-                    Last.Next = null;
+                    Last.Prev.Next = null;
                     break;
             }
             Count--;
         }
     }
-
-    /*class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }*/
 }

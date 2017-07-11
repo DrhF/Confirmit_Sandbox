@@ -1,6 +1,0 @@
-C:\Users\Даниил\Documents\Visual Studio 2015\Projects\Confirmit_sandbox\Doubly_linked_list\Doubly_linked_list\bin\Debug\Doubly_linked_list.exe.config
-C:\Users\Даниил\Documents\Visual Studio 2015\Projects\Confirmit_sandbox\Doubly_linked_list\Doubly_linked_list\bin\Debug\Doubly_linked_list.exe
-C:\Users\Даниил\Documents\Visual Studio 2015\Projects\Confirmit_sandbox\Doubly_linked_list\Doubly_linked_list\bin\Debug\Doubly_linked_list.pdb
-C:\Users\Даниил\Documents\Visual Studio 2015\Projects\Confirmit_sandbox\Doubly_linked_list\Doubly_linked_list\obj\Debug\Doubly_linked_list.csprojResolveAssemblyReference.cache
-C:\Users\Даниил\Documents\Visual Studio 2015\Projects\Confirmit_sandbox\Doubly_linked_list\Doubly_linked_list\obj\Debug\Doubly_linked_list.exe
-C:\Users\Даниил\Documents\Visual Studio 2015\Projects\Confirmit_sandbox\Doubly_linked_list\Doubly_linked_list\obj\Debug\Doubly_linked_list.pdb
