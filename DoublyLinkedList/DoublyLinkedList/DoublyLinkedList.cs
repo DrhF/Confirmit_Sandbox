@@ -9,7 +9,7 @@ namespace DoublyLinkedList
 {
     public class DoublyLinkedList<T> : ICollection<T>
     {
-        public class DoublyLinkedListNode
+        private class DoublyLinkedListNode
         {
             public T Value { set; get; }
             public DoublyLinkedListNode Prev { set; get; }

@@ -10,7 +10,7 @@ namespace DoublyLinkedList.Test
     {
 
         [TestMethod]
-        public void List_Init_Count()
+        public void List_Init_and_Count()
         {
             // arange
 
@@ -26,7 +26,7 @@ namespace DoublyLinkedList.Test
         }
 
         [TestMethod]
-        public void List_Init_Clear()
+        public void List_Init_and_Clear()
         {
             // arange
 
