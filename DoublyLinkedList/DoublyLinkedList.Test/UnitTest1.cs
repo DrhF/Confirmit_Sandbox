@@ -229,7 +229,7 @@ namespace DoublyLinkedList.Test
                 Assert.AreEqual(arr_no5_1[i], enumerator.Current);
 
             for (int i = 0; i < arr_5.Length; ++i)
-                Assert.IsTrue(lst.Remove(5));
+                Assert.IsTrue(lst_5.Remove(5));
 
             if (lst_5.Count != 0)
                 Assert.Fail("Not all items removed");
